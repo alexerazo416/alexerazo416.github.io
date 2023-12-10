@@ -107,7 +107,7 @@
 
         try {
             push(
-                ref(database, 'gary'),
+                ref(database, 'garyErazo'),
                 {
                     name: nombre,
                     apellido: apellido,
@@ -126,7 +126,7 @@
 
     window.eliminarRegistro = function (registroId) {
         try {
-            remove(ref(database, `gary/${registroId}`));
+            remove(ref(database, `garyErazo/${registroId}`));
             console.log("Registro eliminado correctamente.");
         } catch (error) {
             console.error("Error al eliminar registro:", error);
@@ -158,7 +158,7 @@
         const lugresidencia = document.getElementById("lugresidencia").value;
 
         try {
-            update(ref(database, `gary/${registroId}`), {
+            update(ref(database, `garyErazo/${registroId}`), {
                 name: nombre,
                 apellido: apellido,
                 age: edad,
@@ -189,7 +189,7 @@
         document.getElementById("lugresidencia").value = "";
     }
 
-    onValue(ref(database, 'gary'), (snapshot) => {
+    onValue(ref(database, 'garyErazo'), (snapshot) => {
         const listaRegistros = document.getElementById("lista-registros");
         listaRegistros.innerHTML = "";
 
