@@ -4,6 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Firebase CRUD</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        button.editar {
+            background-color: #4CAF50;
+            color: white;
+            margin-right: 5px;
+        }
+
+        button.eliminar {
+            background-color: #f44336;
+            color: white;
+        }
+    </style>
 </head>
 <body>
 
@@ -116,12 +163,14 @@
 
             const btnEditar = document.createElement("button");
             btnEditar.textContent = "Editar";
+            btnEditar.className = "editar";
             btnEditar.onclick = function () {
                 editarRegistro(registroId, registro.name, registro.age);
             };
 
             const btnEliminar = document.createElement("button");
             btnEliminar.textContent = "Eliminar";
+            btnEliminar.className = "eliminar";
             btnEliminar.onclick = function () {
                 eliminarRegistro(registroId);
             };
