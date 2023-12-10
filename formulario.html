@@ -20,7 +20,7 @@
 
 <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js";
-    import { getDatabase, ref, push, onValue, remove } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-database.js";
+    import { getDatabase, ref, push, onValue, remove, update } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-database.js";
 
     const firebaseConfig = {
         apiKey: "AIzaSyDIc6p_2A8nyVwZmjXt9PqPFhyRBdvssY0",
@@ -63,6 +63,41 @@
         }
     }
 
+    window.editarRegistro = function (registroId, nombre, edad) {
+        document.getElementById("nombre").value = nombre;
+        document.getElementById("edad").value = edad;
+
+        // Cambiar el botón 'Crear' a 'Actualizar' y vincularlo a la función de actualización
+        const btnCrear = document.getElementById("btn-crear");
+        btnCrear.textContent = "Actualizar";
+        btnCrear.onclick = function () {
+            actualizarRegistro(registroId);
+        };
+    }
+
+    window.actualizarRegistro = function (registroId) {
+        const nombre = document.getElementById("nombre").value;
+        const edad = document.getElementById("edad").value;
+
+        try {
+            update(ref(database, `gary/${registroId}`), {
+                name: nombre,
+                age: edad
+            });
+            console.log("Registro actualizado correctamente.");
+            limpiarFormulario();
+        } catch (error) {
+            console.error("Error al actualizar registro:", error);
+        }
+
+        // Cambiar el botón 'Actualizar' a 'Crear' después de la actualización
+        const btnCrear = document.getElementById("btn-crear");
+        btnCrear.textContent = "Crear";
+        btnCrear.onclick = function () {
+            crearRegistro();
+        };
+    }
+
     function limpiarFormulario() {
         document.getElementById("nombre").value = "";
         document.getElementById("edad").value = "";
@@ -79,10 +114,19 @@
             const li = document.createElement("li");
             li.textContent = `${registro.name}, ${registro.age} años`;
 
+            const btnEditar = document.createElement("button");
+            btnEditar.textContent = "Editar";
+            btnEditar.onclick = function () {
+                editarRegistro(registroId, registro.name, registro.age);
+            };
+
             const btnEliminar = document.createElement("button");
             btnEliminar.textContent = "Eliminar";
-            btnEliminar.onclick = () => eliminarRegistro(registroId);
+            btnEliminar.onclick = function () {
+                eliminarRegistro(registroId);
+            };
 
+            li.appendChild(btnEditar);
             li.appendChild(btnEliminar);
             listaRegistros.appendChild(li);
         });
