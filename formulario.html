@@ -42,7 +42,7 @@
 
         try {
             push(
-                ref(database, 'gary'),
+                ref(database, 'garyErazo'),
                 {
                     name: nombre,
                     age: edad 
@@ -55,8 +55,8 @@
     }
 
     // Mostrar datos en la consola cuando cambian en la base de datos (solo para propósitos de prueba)
-    onValue(ref(database, 'gary'), (snapshot) => {
-        console.log("Datos en la colección 'gary':", snapshot.val());
+    onValue(ref(database, 'garyErazo'), (snapshot) => {
+        console.log("Datos en la colección 'garyErazo':", snapshot.val());
     });
 </script>
 
