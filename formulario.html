@@ -56,9 +56,23 @@
 
 <form id="crud-form">
     <label for="nombre">Nombre:</label>
-    <input type="text" id="nombre">
+    <input type="text" id="nombre" required>
+    
+    <label for="apellido">Apellido:</label>
+    <input type="text" id="apellido" required>
+
     <label for="edad">Edad:</label>
-    <input type="number" id="edad">
+    <input type="number" id="edad" required>
+
+    <label for="segundo-apellido">Segundo Apellido:</label>
+    <input type="text" id="segundo-apellido">
+
+    <label for="lugnacimiento">Lugar de Nacimiento:</label>
+    <input type="text" id="lugnacimiento">
+
+    <label for="lugresidencia">Lugar de Residencia:</label>
+    <input type="text" id="lugresidencia">
+
     <button type="button" id="btn-crear" onclick="crearRegistro()">Crear</button>
 </form>
 
@@ -84,14 +98,22 @@
 
     window.crearRegistro = function () {
         const nombre = document.getElementById("nombre").value;
+        const apellido = document.getElementById("apellido").value;
         const edad = document.getElementById("edad").value;
+        const segundoApellido = document.getElementById("segundo-apellido").value;
+        const lugnacimiento = document.getElementById("lugnacimiento").value;
+        const lugresidencia = document.getElementById("lugresidencia").value;
 
         try {
             push(
                 ref(database, 'gary'),
                 {
                     name: nombre,
-                    age: edad 
+                    apellido: apellido,
+                    age: edad,
+                    segundoApellido: segundoApellido,
+                    lugnacimiento: lugnacimiento,
+                    lugresidencia: lugresidencia
                 }
             );
             console.log("Datos enviados correctamente.");
@@ -110,9 +132,13 @@
         }
     }
 
-    window.editarRegistro = function (registroId, nombre, edad) {
+    window.editarRegistro = function (registroId, nombre, apellido, edad, segundoApellido, lugnacimiento, lugresidencia) {
         document.getElementById("nombre").value = nombre;
+        document.getElementById("apellido").value = apellido;
         document.getElementById("edad").value = edad;
+        document.getElementById("segundo-apellido").value = segundoApellido;
+        document.getElementById("lugnacimiento").value = lugnacimiento;
+        document.getElementById("lugresidencia").value = lugresidencia;
 
         // Cambiar el botón 'Crear' a 'Actualizar' y vincularlo a la función de actualización
         const btnCrear = document.getElementById("btn-crear");
@@ -124,12 +150,20 @@
 
     window.actualizarRegistro = function (registroId) {
         const nombre = document.getElementById("nombre").value;
+        const apellido = document.getElementById("apellido").value;
         const edad = document.getElementById("edad").value;
+        const segundoApellido = document.getElementById("segundo-apellido").value;
+        const lugnacimiento = document.getElementById("lugnacimiento").value;
+        const lugresidencia = document.getElementById("lugresidencia").value;
 
         try {
             update(ref(database, `gary/${registroId}`), {
                 name: nombre,
-                age: edad
+                apellido: apellido,
+                age: edad,
+                segundoApellido: segundoApellido,
+                lugnacimiento: lugnacimiento,
+                lugresidencia: lugresidencia
             });
             console.log("Registro actualizado correctamente.");
             limpiarFormulario();
@@ -147,7 +181,11 @@
 
     function limpiarFormulario() {
         document.getElementById("nombre").value = "";
+        document.getElementById("apellido").value = "";
         document.getElementById("edad").value = "";
+        document.getElementById("segundo-apellido").value = "";
+        document.getElementById("lugnacimiento").value = "";
+        document.getElementById("lugresidencia").value = "";
     }
 
     onValue(ref(database, 'gary'), (snapshot) => {
@@ -159,13 +197,13 @@
             const registroId = childSnapshot.key;
 
             const li = document.createElement("li");
-            li.textContent = `${registro.name}, ${registro.age} años`;
+            li.textContent = `${registro.name} ${registro.apellido}, ${registro.age} años, Nacimiento: ${registro.lugnacimiento}, Residencia: ${registro.lugresidencia}`;
 
             const btnEditar = document.createElement("button");
             btnEditar.textContent = "Editar";
             btnEditar.className = "editar";
             btnEditar.onclick = function () {
-                editarRegistro(registroId, registro.name, registro.age);
+                editarRegistro(registroId, registro.name, registro.apellido, registro.age, registro.segundoApellido, registro.lugnacimiento, registro.lugresidencia);
             };
 
             const btnEliminar = document.createElement("button");
