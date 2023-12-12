@@ -1,84 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <title>Firebase CRUD</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-
-        form {
-            margin-bottom: 20px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        input {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 10px;
-            box-sizing: border-box;
-        }
-
-        button {
-            padding: 10px;
-            cursor: pointer;
-        }
-
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        li {
-            margin-bottom: 10px;
-        }
-
-        button.editar {
-            background-color: #4CAF50;
-            color: white;
-            margin-right: 5px;
-        }
-
-        button.eliminar {
-            background-color: #f44336;
-            color: white;
-        }
-    </style>
 </head>
+<style>
+    body {
+        background-color: #6e87cf; 
+    }
+</style>
+
 <body>
-    <h1>Bienvenidos a mi pequeño crud entre Github y Firebase..</h1>
+<h1>Crud </h1>
+<div class="container mt-5">
+    <form id="crud-form">
+        <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input type="text" class="form-control" id="nombre" required>
+        </div>
 
-<form id="crud-form">
-    <label for="nombre">Nombre:</label>
-    <input type="text" id="nombre" required>
-    
-    <label for="apellido">Apellido:</label>
-    <input type="text" id="apellido" required>
+        <div class="form-group">
+            <label for="apellido">Apellido:</label>
+            <input type="text" class="form-control" id="apellido" required>
+        </div>
 
-    <label for="edad">Edad:</label>
-    <input type="number" id="edad" required>
+        <div class="form-group">
+            <label for="edad">Edad:</label>
+            <input type="number" class="form-control" id="edad" required>
+        </div>
 
-    <label for="segundo-apellido">Segundo Apellido:</label>
-    <input type="text" id="segundo-apellido">
+        <div class="form-group">
+            <label for="segundo-apellido">Segundo Apellido:</label>
+            <input type="text" class="form-control" id="segundo-apellido">
+        </div>
 
-    <label for="lugnacimiento">Lugar de Nacimiento:</label>
-    <input type="text" id="lugnacimiento">
+        <div class="form-group">
+            <label for="lugnacimiento">Lugar de Nacimiento:</label>
+            <input type="text" class="form-control" id="lugnacimiento">
+        </div>
 
-    <label for="lugresidencia">Lugar de Residencia:</label>
-    <input type="text" id="lugresidencia">
+        <div class="form-group">
+            <label for="lugresidencia">Lugar de Residencia:</label>
+            <input type="text" class="form-control" id="lugresidencia">
+        </div>
 
-    <button type="button" id="btn-crear" onclick="crearRegistro()">Enviar</button>
-</form>
+        <button type="button" class="btn btn-primary" onclick="crearRegistro()">Enviar</button>
+    </form>
+</div>
 
-<h2>Lista de Registros</h2>
-<ul id="lista-registros"></ul>
+<h2 class="mt-5">Lista de Registros</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Edad</th>
+            <th scope="col">Segundo Apellido</th>
+            <th scope="col">Lugar de Nacimiento</th>
+            <th scope="col">Lugar de Residencia</th>
+            <th scope="col">Acciones</th>
+        </tr>
+    </thead>
+    <tbody id="lista-registros"></tbody>
+</table>
 
 <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js";
@@ -86,12 +74,12 @@
 
     const firebaseConfig = {
         apiKey: "AIzaSyBMJsVpnbOwVOiVNbTZScZdet9qlGigDL0",
-        authDomain: "conexion-8ec0d.firebaseapp.com",
-        databaseURL: "https://conexion-8ec0d-default-rtdb.firebaseio.com",
-        projectId: "conexion-8ec0d",
-        storageBucket: "conexion-8ec0d.appspot.com",
-        messagingSenderId: "679910299749",
-        appId: "1:679910299749:web:9800b464879628b4850e8c"
+              authDomain: "conexion-8ec0d.firebaseapp.com",
+              databaseURL: "https://conexion-8ec0d-default-rtdb.firebaseio.com",
+              projectId: "conexion-8ec0d",
+              storageBucket: "conexion-8ec0d.appspot.com",
+              messagingSenderId: "679910299749",
+              appId: "1:679910299749:web:9800b464879628b4850e8c"
     };
 
     const app = initializeApp(firebaseConfig);
@@ -117,7 +105,7 @@
                     lugresidencia: lugresidencia
                 }
             );
-            console.log("Datos enviados correctamente.");
+            alert("Datos enviados correctamente.");
             limpiarFormulario();
         } catch (error) {
             console.error("Error al enviar datos:", error);
@@ -127,7 +115,7 @@
     window.eliminarRegistro = function (registroId) {
         try {
             remove(ref(database, `garyErazo/${registroId}`));
-            console.log("Registro eliminado correctamente.");
+            alert("Registro eliminado correctamente.");
         } catch (error) {
             console.error("Error al eliminar registro:", error);
         }
@@ -141,10 +129,11 @@
         document.getElementById("lugnacimiento").value = lugnacimiento;
         document.getElementById("lugresidencia").value = lugresidencia;
 
-        // Cambiar el botón 'Crear' a 'Actualizar' y vincularlo a la función de actualización
-        const btnCrear = document.getElementById("btn-crear");
-        btnCrear.textContent = "Actualizar";
-        btnCrear.onclick = function () {
+        // Cambiar el botón 'Enviar' a 'Actualizar' y vincularlo a la función de actualización
+        const btnEnviar = document.querySelector("#crud-form button");
+        btnEnviar.textContent = "Actualizar";
+        btnEnviar.className = "btn btn-warning";
+        btnEnviar.onclick = function () {
             actualizarRegistro(registroId);
         };
     }
@@ -166,16 +155,16 @@
                 lugnacimiento: lugnacimiento,
                 lugresidencia: lugresidencia
             });
-            console.log("Registro actualizado correctamente.");
+            alert("Registro actualizado correctamente.");
             limpiarFormulario();
         } catch (error) {
             console.error("Error al actualizar registro:", error);
         }
 
-        // Cambiar el botón 'Actualizar' a 'Crear' después de la actualización
-        const btnCrear = document.getElementById("btn-crear");
-        btnCrear.textContent = "Crear";
-        btnCrear.onclick = function () {
+        const btnEnviar = document.querySelector("#crud-form button");
+        btnEnviar.textContent = "Enviar";
+        btnEnviar.className = "btn btn-primary";
+        btnEnviar.onclick = function () {
             crearRegistro();
         };
     }
@@ -197,29 +186,59 @@
             const registro = childSnapshot.val();
             const registroId = childSnapshot.key;
 
-            const li = document.createElement("li");
-            li.textContent = `${registro.name} ${registro.apellido}, ${registro.age} años, Nacimiento: ${registro.lugnacimiento}, Residencia: ${registro.lugresidencia}`;
+            const tr = document.createElement("tr");
+
+            const tdNombre = document.createElement("td");
+            tdNombre.textContent = registro.name;
+
+            const tdApellido = document.createElement("td");
+            tdApellido.textContent = registro.apellido;
+
+            const tdEdad = document.createElement("td");
+            tdEdad.textContent = registro.age;
+
+            const tdSegundoApellido = document.createElement("td");
+            tdSegundoApellido.textContent = registro.segundoApellido || "";
+
+            const tdLugNacimiento = document.createElement("td");
+            tdLugNacimiento.textContent = registro.lugnacimiento || "";
+
+            const tdLugResidencia = document.createElement("td");
+            tdLugResidencia.textContent = registro.lugresidencia || "";
+
+            const tdAcciones = document.createElement("td");
 
             const btnEditar = document.createElement("button");
             btnEditar.textContent = "Editar";
-            btnEditar.className = "editar";
+            btnEditar.className = "btn btn-primary me-2";
             btnEditar.onclick = function () {
                 editarRegistro(registroId, registro.name, registro.apellido, registro.age, registro.segundoApellido, registro.lugnacimiento, registro.lugresidencia);
             };
 
             const btnEliminar = document.createElement("button");
             btnEliminar.textContent = "Eliminar";
-            btnEliminar.className = "eliminar";
+            btnEliminar.className = "btn btn-danger";
             btnEliminar.onclick = function () {
                 eliminarRegistro(registroId);
             };
 
-            li.appendChild(btnEditar);
-            li.appendChild(btnEliminar);
-            listaRegistros.appendChild(li);
+            tdAcciones.appendChild(btnEditar);
+            tdAcciones.appendChild(btnEliminar);
+
+            tr.appendChild(tdNombre);
+            tr.appendChild(tdApellido);
+            tr.appendChild(tdEdad);
+            tr.appendChild(tdSegundoApellido);
+            tr.appendChild(tdLugNacimiento);
+            tr.appendChild(tdLugResidencia);
+            tr.appendChild(tdAcciones);
+
+            listaRegistros.appendChild(tr);
         });
     });
 </script>
 
 </body>
 </html>
+
+
