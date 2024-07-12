@@ -1,140 +1,153 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Calculadora Matemática</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio Gary</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Barra de navegación -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <a class="navbar-brand" href="#">
-      Calculadora Matemática
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
-      aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="pag1.html">Calculadora Pares</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="pag2.html">Calculadoa N Diferentes numerooos </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="pag3.html">Calculadora Promedio numerooos </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="pag4.html">Calculadora de Mes numeroos </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="pag5.html">Calculadora de Angulos numeroos </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="formulario.html">Enviar Registros </a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+    <header class="bg-dark text-white fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-dark container">
+            <a class="navbar-brand" href="#">Mi Portafolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#sobre-mi">Sobre Mí</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#habilidades">Habilidades</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#educacion">Educación</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <br><br><br><br><br><br><br>
 
-  <!-- Contenido de la página -->
-  <img src="img/calcu.png" alt="" class="mx-auto d-block">
-  <div id="accordion">
-    <h3>Calculadora online guía del usuario</h3>
-    <div>
-      <section id="instruct" class="mx-auto d-block">
-        <p>La calculadora permite hacer como los simples cálculos aritméticos, tanto calcular los porcentajes, hacer elevación a potencia, extraer la raíz cuadrada. Las operaciones online se hacen por medio del ratón o del teclado numérico. El tamaño de la calculadora online es ajustable y sus parámetros pueden ser guardados para su uso en el futuro.</p>
-        <p>Las instrucciones detalladas del uso de la calculadora siguen abajo.</p>
-        <h2>Calculadora online guía del usuario</h2>
-        <h3>Funciones de las teclas</h3>
-        <p>
-          [&nbsp;0&nbsp;], [&nbsp;1&nbsp;], [&nbsp;2&nbsp;], ... [&nbsp;9&nbsp;] - teclas numéricas estándar;<br>
-          [&nbsp;00&nbsp;] - tecla para inserir un cero doble;<br>
-          [&nbsp;→&nbsp;] - borrar el último carácter;<br>
-          [&nbsp;+/-&nbsp;] - cambiar el signo matemático en la pantalla;<br>
-          [&nbsp;X<sup>Y</sup>&nbsp;] - elevar el número X a la potencia Y;<br>
-          [&nbsp;√&nbsp;] - extracción de la raíz cuadrada;<br>
-          [&nbsp;+&nbsp;] - adición, [&nbsp;-&nbsp;] - sustracción, [&nbsp;х&nbsp;] - multiplicación, [&nbsp;÷&nbsp;] - división;<br>
-          [&nbsp;%&nbsp;] - calculación de porcentajes;<br>
-          [&nbsp;M+&nbsp;] - guardar en la memoria con el signo [&nbsp;+&nbsp;];<br>
-          [&nbsp;M-&nbsp;] - guardar en la memoria con el signo [&nbsp;-&nbsp;];<br>
-          [&nbsp;MR&nbsp;] - visualizar el contenido de la memoria;<br>
-          [&nbsp;MC&nbsp;] - borrar el contenido de la memoria;<br>
-          [&nbsp;AC&nbsp;] - reinicializar la calculadora y su memoria;<br>
-          [&nbsp;C&nbsp;] - reinicializar la calculadora sin tocar su memoria.
-        </p>
+    <section id="sobre-mi" class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 text-center">
+                    <img src="images/rena.jpeg" class="rounded-circle img-fluid" alt="Foto de [Tu Nombre]">
+                </div>
+                <div class="col-md-8">
+                    <h2>Sobre Mí</h2>
+                    <p>Soy Ingeniero en sistemas orgullosamente representante de la Universidad Tecnica de Cotopaxi, me considero un profesional con muchas habilidades y una gran capacidad de resolver problemas capaz de superar desafios de la vida laboral.</p>
+                    <p><h4>Telefono:</h4>0962159019</p>
+                    <p><h4>Direccion:</h4>Latacunga</p>
+                    <p><h4>Correo:</h4>alexerazo416@gmail.com</p>
 
-        <h3>Introducción de las instrucciones usando el teclado</h3>
-        <p>La calculadora permite usar cualquier tecla numérica de la computadora, como las que se sitúan arriba, tanto las que están a la derecha del teclado.</p>
-        <p>
-          La tecla [Enter] corresponde al signo "igual".<br>
-          Para borrar el último carácter introducido se usa la tecla [Backspace] (tecla con una flecha).<br>
-          Para introducir el signo de adición se usa la tecla [&nbsp;+&nbsp;] arriba o a la derecha del teclado.<br>
-          Para introducir el signo de sustracción se usa la tecla [&nbsp;-&nbsp;] arriba o a la derecha del teclado.<br>
-          Para introducir el signo de multiplicación se usa la tecla [&nbsp;*&nbsp;] a la derecha del teclado.<br>
-          Para introducir el signo de división se usa la tecla [&nbsp;/&nbsp;] a la derecha del teclado.<br>
-          Para reinicializar la calculadora se puede usar las teclas [Esc], [Del] de arriba, o [End] del teclado numérico.
-        </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <h3>Ejemplos de las calculaciones en la calculadora online</h3>
-        <p>
-          Extracción de la raíz cuadrada del número 529: 529 [&nbsp;√&nbsp;]. Resultado - 23.<br>
-          Elevar el número 3 a la potencia 4: 3 [&nbsp;X<sup>Y</sup>&nbsp;] 4 [&nbsp;=&nbsp;]. Resultado 81.<br>
-          Calcular el porcentaje del número: 500 [&nbsp;х&nbsp;] 25 [&nbsp;%&nbsp;]. Resultado - 125.<br>
+    <section id="habilidades" class="py-5">
+        <div class="container">
+            <h2 class="text-center">Mis Habilidades</h2>
+            <div class="row text-center">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <i class="fas fa-code fa-3x mb-3"></i>
+                            <h5 class="card-title">Desarrollo de Páginas Web</h5>
+                            <p class="card-text">HTML/CSS</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <i class="fas fa-laptop-code fa-3x mb-3"></i>
+                            <h5 class="card-title">Desarrollo de Software</h5>
+                            <p class="card-text">Diversos Lenguajes</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <i class="fas fa-python fa-3x mb-3"></i>
+                            <h5 class="card-title">Desarrollo con Python y Django</h5>
+                            <p class="card-text">Backend Development</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <i class="fas fa-database fa-3x mb-3"></i>
+                            <h5 class="card-title">Desarrollo con PHP y CodeIgniter</h5>
+                            <p class="card-text">Framework PHP</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <i class="fas fa-server fa-3x mb-3"></i>
+                            <h5 class="card-title">Bases de Datos</h5>
+                            <p class="card-text">MySQL, PostgreSQL, SQL Server</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-          Adición del porcentaje al número: 500 [&nbsp;+&nbsp;] 25 [&nbsp;%&nbsp;]. Resultado - 625.<br>
-          Sustracción del porcentaje del número: 500 [&nbsp;-&nbsp;] 25 [&nbsp;%&nbsp;]. Resultado - 375.
-        </p>
+    <section id="educacion" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center">Educación Secundaria</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h5>Unidad Educativa Particular Catolica Sagrada Familia de Nazaret</h5>
+                    <p>Bachillerato General Unificado 2019-2020</p>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <h2 class="text-center">Educación Tercer Nivel</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h5>Universidad Tecnica de Cotopaxi</h5>
+                    <p>Ing. Sistemas de Informacion 2020-2024</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <h3>Preguntas frecuentes</h3>
-        <p>En la calculadora online 2+2 x 2 es igual a 8, ¿tal vez la calculadora se equivoca?</p>
+    <section id="contacto" class="py-5">
+        <div class="container">
+            <h2 class="text-center">Contacto</h2>
+            <form action="enviar_mensaje.php" method="post">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre" class="form-control" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" class="form-control" required>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" class="form-control" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+        </div>
+    </section>
 
-        <p>No, la calculadora calcula correctamente, pero al introducir cada acción matemática (adición, sustracción, etc.) las calcula alternadamente. Fíjese en la pantalla de las acciones corrientes que está a la derecha debajo de la pantalla principal. </p>
-        <p>Vamos a calcularlo: 2 + 2=4, el subtotal será 4. Luego 4 x 2=8, la respuesta correcta es 8. ¡No hay faltas algunas!</p>
+    <footer class="bg-dark text-white text-center py-3">
+        
+    </footer>
 
-        <h3>De la historia de la aparición de las calculadoras</h3>
-        <p>El antecesor de la calculadora moderna fue abaco (del latín "abaco" significa "tabla"). Un abaco fue una tabla con unas cavidades donde se movían las marcas de cálculo (unas piedras o pepitas).</p>
-        <p>Dicen que el primer abaco fue notado en los pueblos de la Babilonia Antigua hace unos 3 mil años A.C. En la Grecia Antigua, el abaco apareció aproximadamente en el siglo V A.C.</p>
-      </section>
-
-      <!-- ... -->
-    </div>
-
-    <h3>Introducción de las instrucciones usando el teclado</h3>
-    <div>
-      <!-- Contenido de la sección Introducción de las instrucciones usando el teclado -->
-      <!-- ... -->
-    </div>
-
-    <h3>Ejemplos de las calculaciones en la calculadora online</h3>
-    <div>
-      <!-- Contenido de la sección Ejemplos de las calculaciones en la calculadora online -->
-      <!-- ... -->
-    </div>
-
-    <h3>Preguntas frecuentes</h3>
-    <div>
-      <!-- Contenido de la sección Preguntas frecuentes -->
-      <!-- ... -->
-    </div>
-  </div>
-
-  <!-- Barra de pie de página -->
-  <footer class="footer bg-dark text-white text-center py-2">
-    <p>&copy; 2023 Calculadora Matemática</p>
-  </footer>
-
-  <!-- Scripts de Bootstrap y jQuery (necesarios para el funcionamiento de Bootstrap y jQuery UI) -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-
-
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
 </body>
-
 </html>
